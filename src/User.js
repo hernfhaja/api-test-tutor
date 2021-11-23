@@ -4,7 +4,7 @@ import axios from "axios";
 function createUser() {
   const loginData = {
     email: "hernfhaja3@gmail.com",
-    password: "1g23456",
+    password: "123456",
   };
 
   const userData = {
@@ -25,7 +25,7 @@ function createUser() {
 
     try {
       await axios
-        .post("http://127.0.0.1:5000/user/login", loginData)
+        .post("https://tutor-service-api2.herokuapp.com/user/login", loginData)
         .then((res) => {
           console.log(res.data);
         });
@@ -38,9 +38,11 @@ function createUser() {
     console.log("get function");
 
     try {
-      await axios.get("http://127.0.0.1:5000/user/4").then((res) => {
-        console.log(res.data);
-      });
+      await axios
+        .get("https://tutor-service-api2.herokuapp.com/user/4")
+        .then((res) => {
+          console.log(res.data);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +53,7 @@ function createUser() {
 
     try {
       await axios
-        .post("http://127.0.0.1:5000/user/update", userData)
+        .post("https://tutor-service-api2.herokuapp.com/user/update", userData)
         .then((res) => {
           console.log(res.data);
         });
@@ -65,7 +67,7 @@ function createUser() {
 
     try {
       await axios
-        .post("http://127.0.0.1:5000/user/create", userData)
+        .post("https://tutor-service-api2.herokuapp.com/user/create", userData)
         .then((res) => {
           console.log(res.data);
         });

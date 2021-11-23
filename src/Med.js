@@ -29,9 +29,11 @@ function createUser() {
     console.log("get function");
 
     try {
-      await axios.get("http://127.0.0.1:5000/med/6").then((res) => {
-        console.log(res.data);
-      });
+      await axios
+        .get("https://tutor-service-api2.herokuapp.com/med/6")
+        .then((res) => {
+          console.log(res.data);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +44,10 @@ function createUser() {
 
     try {
       await axios
-        .post("http://127.0.0.1:5000/med/update", medUpdateData)
+        .post(
+          "https://tutor-service-api2.herokuapp.com/med/update",
+          medUpdateData
+        )
         .then((res) => {
           console.log(res.data);
         });
@@ -56,7 +61,7 @@ function createUser() {
 
     try {
       await axios
-        .post("http://127.0.0.1:5000/med/create", medData)
+        .post("https://tutor-service-api2.herokuapp.com/med/create", medData)
         .then((res) => {
           console.log(res.data);
         });
